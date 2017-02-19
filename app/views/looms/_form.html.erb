@@ -1,0 +1,31 @@
+ <%= form_for @loom, :html => {:class => "form-horizontal center"} do |f| %>
+  <% if @loom.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@loom.errors.count, "error") %> prohibited
+        this loom from being saved:
+      </h2>
+      <ul>
+        <% @loom.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+        <%= f.label :workshop, "اسم الورشه:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :workshop, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :refrence, "رقم النول", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :reference, class: "form-control" %>
+        </div>
+      </div>
+
+      
+  
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+ <% end %>

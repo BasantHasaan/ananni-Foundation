@@ -1,0 +1,2 @@
+module DailyProductionInputHelper
+end

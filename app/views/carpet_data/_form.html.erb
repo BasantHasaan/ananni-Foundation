@@ -1,0 +1,72 @@
+ <%= form_for @carpetdata, :html => {:class => "form-horizontal center"} do |f| %>
+  <% if @carpetdata.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@carpetdata.errors.count, "error") %> prohibited
+        this showroom from being saved:
+      </h2>
+      <ul>
+        <% @carpetdata.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+        <%= f.label "اسم المعرض:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :width, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label "المنطقه:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :lenght, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "العنوان:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :knot, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label  "اسم المسئول:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :code, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label "رقم التليفون:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+        <div class="form-group">
+        <%= f.label "رقم التليفون:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :main_model, class: "form-control" %>
+        </div>
+      </div>
+        <div class="form-group">
+        <%= f.label "رقم التليفون:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :raw_material_name, class: "form-control" %>
+        </div>
+      </div>
+        <div class="form-group">
+        <%= f.label "رقم التليفون:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :raw_material_quantity, class: "form-control" %>
+        </div>
+      </div>
+        <div class="form-group">
+        <%= f.label  "رقم التليفون:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :number_of_rows, class: "form-control" %>
+        </div>
+      </div>
+  
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+ <% end %>

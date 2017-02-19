@@ -1,0 +1,54 @@
+ <%= form_for @job_order, :html => {:class => "form-horizontal center"} do |f| %>
+  <% if @job_order.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@job_order.errors.count, "error") %> prohibited
+        this job_order from being saved:
+      </h2>
+      <ul>
+        <% @job_order.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+        <%= f.label "رقم الامر:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :serial, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label"التاريخ:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :date, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label"لفئه:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :item, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label "الورشه:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :workshop, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label "النول:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :loom, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label  "العامل:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :worker, class: "form-control" %>
+        </div>
+      </div>
+  
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+ <% end %>

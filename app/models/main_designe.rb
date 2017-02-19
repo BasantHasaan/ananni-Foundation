@@ -1,0 +1,2 @@
+class MainDesigne < ApplicationRecord
+end

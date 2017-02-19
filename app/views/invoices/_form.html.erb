@@ -1,0 +1,69 @@
+ <%= form_for @invoice, :html => {:class => "form-horizontal center"} do |f| %>
+  <% if @invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@invoice.errors.count, "error") %> prohibited
+        this showroom from being saved:
+      </h2>
+      <ul>
+        <% @invoice.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+        <%= f.label "رقم الفاتره:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :invoice_serial, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label "التاريخ:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :date, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "العميل:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :customer, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label  ":", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :item, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label "الكميه:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :quantity, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label "سعر الوحده:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :unite_price, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label "الخصم:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :discount, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label "الضريبه:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :tax, class: "form-control" %>
+        </div>
+      </div>
+
+
+
+  
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+ <% end %>

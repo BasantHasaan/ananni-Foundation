@@ -1,0 +1,54 @@
+ <%= form_for @rawmaterial, :html => {:class => "form-horizontal center"} do |f| %>
+  <% if @rawmaterial.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@rawmaterial.errors.count, "error") %> prohibited
+        this rawmaterial from being saved:
+      </h2>
+      <ul>
+        <% @rawmaterial.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+        <%= f.label "الكود:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :code, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label "المنطقه:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :item, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label"الوصف:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :description, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label "اسم المسئول:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :uom, class: "form-control" %>
+        </div>
+      </div>
+       <div class="form-group">
+        <%= f.label "حد الامان:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :safety_level, class: "form-control" %>
+        </div>
+      </div>
+        <div class="form-group">
+        <%= f.label "الفئه:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :category, class: "form-control" %>
+        </div>
+      </div>
+  
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+ <% end %>

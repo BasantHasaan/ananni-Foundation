@@ -1,0 +1,35 @@
+ <%= form_for @invoicepayment, :html => {:class => "form-horizontal center"} do |f|%>
+  <% if @invoicepayment.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@invoicepayment.errors.count, "error") %> prohibited
+        this showroom from being saved:
+      </h2>
+      <ul>
+        <% @invoicepayment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group" dir="rtl">
+        <%= f.label "المبلغ:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :amount, class: "form-control" %>
+        </div>
+</div>
+<div class="form-group" dir="rtl">
+        <%= f.label  "تستحق بعد:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :due_after, class: "form-control" %>
+        </div>
+</div>
+
+<div class="form-group" dir="rtl">
+        <%= f.label "تستحق من:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :due_from, class: "form-control" %>
+        </div>
+</div>
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+ <% end %>
