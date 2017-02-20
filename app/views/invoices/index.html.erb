@@ -14,7 +14,7 @@
   <th colspan="1" class="center">مسلسل الفاتوره </th>
   <th colspan="1" class="center">التاريخ</th>
   <th colspan="1" class="center">العميل</th>
-  <th colspan="1" class="center">الفئه</th>
+  <th colspan="1" class="center">الصنف</th>
   <th colspan="1" class="center">الكميه</th>
   <th colspan="1" class="center">سعر الوحده</th>
   <th colspan="1" class="center">الخصم</th>
@@ -24,14 +24,14 @@
 </thead>
 <tbody>
     <% unless @invoices.empty? %>
-    <% @invoicess.each do |invoice| %>
+    <% @invoices.each do |invoice| %>
       <tr>
         <td><%= invoice.invoice_serial%></td>
         <td><%= invoice.date %></td>
         <td><%= invoice.customer %></td>
         <td><%= invoice.item%></td>        
         <td><%= invoice.quantity %></td>
-        <td><%= invoice.unite_price%></td>        
+        <td><%= invoice.unit_price%></td>        
         <td><%= invoice.discount%></td>
         <td><%= invoice.tax%></td>        
         <td><%= link_to 'تعديل الفاتوره', edit_invoice_path(invoice) %>

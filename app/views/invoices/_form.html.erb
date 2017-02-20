@@ -1,9 +1,16 @@
+    <style type="text/css">
+   @media (min-width: 992px)
+    .col-md-4 {
+    width:15.33333333%;
+    float:right;
+}
+    </style>
  <%= form_for @invoice, :html => {:class => "form-horizontal center"} do |f| %>
   <% if @invoice.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@invoice.errors.count, "error") %> prohibited
-        this showroom from being saved:
+        this invoice from being saved:
       </h2>
       <ul>
         <% @invoice.errors.full_messages.each do |msg| %>
@@ -13,7 +20,7 @@
     </div>
   <% end %>
 <div class="form-group">
-        <%= f.label "رقم الفاتره:", class: "col-md-4 control-label" %>
+        <%= f.label "مسلسل الفاتوره:", class: "col-md-4 control-label-right" %>
         <div class="col-md-8">
           <%= f.text_field :invoice_serial, class: "form-control" %>
         </div>
@@ -32,7 +39,7 @@
         </div>
       </div>
        <div class="form-group">
-        <%= f.label  ":", class: "col-md-4 control-label" %>
+        <%= f.label  "الصنف:", class: "col-md-4 control-label" %>
         <div class="col-md-8">
           <%= f.text_field :item, class: "form-control" %>
         </div>
@@ -46,7 +53,7 @@
        <div class="form-group">
         <%= f.label "سعر الوحده:", class: "col-md-4 control-label" %>
         <div class="col-md-8">
-          <%= f.text_field :unite_price, class: "form-control" %>
+          <%= f.text_field :unit_price, class: "form-control" %>
         </div>
       </div>
        <div class="form-group">

@@ -38,6 +38,6 @@ class InvoicesController < ApplicationController
 
   private
     def invoices_params
-      params.require(:invoice).permit(:name,:location,:address,:person_name,:person_number)
+      params.require(:invoice).permit(:invoice_serial,:date,:customer,:item,:quantity,:unit_price,:discount,:tax)
     end
 end
