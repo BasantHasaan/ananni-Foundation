@@ -11,20 +11,20 @@
 <table class="table table-striped table-bordered table-condensed" dir="rtl">
 <thead>
 <tr>
-  <th colspan="1" class="center">اسم الورشه</th>
   <th colspan="1" class="center">رقم النول</th>
+  <th colspan="1" class="center">اسم الورشه</th>
 
   <th colspan="1" class="action">Actions</th>
 </tr>
 </thead>
 <tbody>
-    <% unless @looms.empty? %>
+    <% unless @looms.empty?%>
     <% @looms.each do |loom| %>
       <tr>
         <td><%= loom.reference %></td>
-        <td><%= loom.workshop %></td>       
-        <td><%= link_to 'Edit', edit_loom_path(loom) %>
-        <%= link_to 'Delete', loom_path(loom),
+        <td><%= loom.workshop.name%></td>       
+        <td><%= link_to 'تعديل', edit_loom_path(loom) %>
+        <%= link_to 'مسح', loom_path(loom),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 

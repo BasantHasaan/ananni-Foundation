@@ -1,9 +1,11 @@
 class LoomsController < ApplicationController
   def index
     @looms= Loom.all
+    @workshop=Workshop.all.map{|u| [u.name]}
   end
 
   def new
+    @workshop_options = Workshop.all.map{ |u| [ u.name, u.id ] }
     @loom= Loom.new
 
   end
@@ -18,6 +20,7 @@ class LoomsController < ApplicationController
   end
 
   def edit
+    @workshop_options = Workshop.all.map{ |u| [ u.name, u.id ] }
     @loom = Loom.find(params[:id])
   end
 
@@ -38,6 +41,6 @@ class LoomsController < ApplicationController
 
   private
     def looms_params
-      params.require(:loom).permit(:workshop,:reference)
+      params.require(:loom).permit(:reference,:workshop_id)
     end
 end

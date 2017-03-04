@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(version: 20170218142321) do
 
   create_table "looms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.integer  "reference"
-    t.string   "workshop"
     t.integer  "workshop_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

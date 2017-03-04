@@ -13,17 +13,21 @@
     </div>
   <% end %>
 <div class="form-group">
-        <%= f.label :workshop, "اسم الورشه:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :workshop, class: "form-control" %>
+      <%= f.label "اسم الورشه:", class: "col-md-4 control-label" %>
+       <div class="col-md-8">
+          <%= f.select(:workshop_id, @workshop_options)%>
         </div>
       </div>
       <div class="form-group">
-        <%= f.label :refrence, "رقم النول", class: "col-md-4 control-label" %>
+        <%= f.label  "رقم النول", class: "col-md-4 control-label" %>
         <div class="col-md-8">
           <%= f.text_field :reference, class: "form-control" %>
         </div>
       </div>
+    <!--   <div class="form-group">
+
+      </div> -->
+
 
       
   
