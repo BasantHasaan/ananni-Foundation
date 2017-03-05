@@ -1,9 +1,12 @@
 class WorkshopsController < ApplicationController
   def index
     @workshops= Workshop.all
+    @location=Location.all.map{|u| [u.name]}
+
   end
 
   def new
+    @location_options = Location.all.map{ |u| [ u.name, u.id ] }
     @workshop= Workshop.new
 
   end
@@ -18,6 +21,7 @@ class WorkshopsController < ApplicationController
   end
 
   def edit
+    @location_options = Workshop.all.map{ |u| [ u.name, u.id ] }
     @workshop = Workshop.find(params[:id])
   end
 
@@ -38,6 +42,6 @@ class WorkshopsController < ApplicationController
 
   private
     def workshops_params
-      params.require(:workshop).permit(:name,:location)
+      params.require(:workshop).permit(:name,:location_id)
     end
 end

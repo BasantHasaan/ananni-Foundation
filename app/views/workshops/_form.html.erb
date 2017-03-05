@@ -19,9 +19,9 @@
         </div>
       </div>
       <div class="form-group">
-        <%= f.label :location, "المنطقه:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :location, class: "form-control" %>
+       <%= f.label "المنطقه:", class: "col-md-4 control-label" %>
+       <div class="col-md-8">
+          <%= f.select(:location_id, @location_options)%>
         </div>
       </div>
       <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   

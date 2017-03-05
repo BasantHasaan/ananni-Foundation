@@ -21,7 +21,7 @@
     <% @workshops.each do |workshop| %>
       <tr>
         <td><%= workshop.name %></td>
-        <td><%= workshop.location %></td>        
+        <td><%= workshop.location.name %></td>        
         <td><%= link_to 'Edit', edit_workshop_path(workshop) %>
         <%= link_to 'Delete', workshop_path(workshop),
               method: :delete,

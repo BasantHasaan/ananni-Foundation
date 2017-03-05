@@ -66,6 +66,7 @@
         <div class="col-md-8">
           <%= f.text_field :number_of_rows, class: "form-control" %>
         </div>
+        <%= f.collection_select :raw_material_warehouse_ids, RawMaterialWarehouse.all, :id, :item, :include_blank => true %>
       </div>
   
       <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
