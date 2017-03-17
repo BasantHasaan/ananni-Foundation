@@ -1,0 +1,2 @@
+class DailyProductionInput < ApplicationRecord
+end

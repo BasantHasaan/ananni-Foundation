@@ -1,0 +1,36 @@
+ <%= form_for @dailyproduction, :html => {:class => "form-horizontal center"} do |f| %>
+  <% if @dailyproduction.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@dailyproduction.errors.count, "error") %> prohibited
+        this showroom from being saved:
+      </h2>
+      <ul>
+        <% @dailyproduction.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+        <%= f.label"المسلسل:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :serial, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label "التاريخ:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :date, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "عدد الصفوف:", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :number_of_row, class: "form-control" %>
+        </div>
+      </div>
+  
+      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+ <% end %>

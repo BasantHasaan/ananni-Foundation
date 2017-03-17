@@ -1,0 +1,43 @@
+ <div class="page-header">
+    <h1>تقارير الانتاج اليوميه</h1>
+
+  <div class="contextual">
+    <%= link_to(new_daily_production_input_path, class: "btn btn-success") do %>
+      اضافه تقرير<i class="icon-plus icon-white"></i>
+    <% end %>
+  </div>
+</div>
+
+<table class="table table-striped table-bordered table-condensed" style="float: left;" >
+<thead>
+<tr>
+  <th colspan="1" class="center">مسلسل</th>
+  <th colspan="1" class="center">التاريخ</th>
+  <th colspan="1" class="center">عدد الصفوف</th>
+  <th colspan="1" class="center">اسم المسئول</th>
+  <th colspan="1" class="center">رقم التليفون</th>
+  <th></th>
+  <th colspan="1" class="center">Actions</th>
+</tr>
+</thead>
+<tbody>
+    <% unless @dailyproductions.empty? %>
+    <% @dailyproductions.each do |dailyproduction| %>
+      <tr>
+        <td><%= dailyproduction.serial %></td>
+        <td><%= dailyproduction.date %></td>
+        <td><%= dailyproduction.number_of_row %></td>
+        <td> hhhhh</td>
+        <td><%= link_to 'تعديل', edit_daily_production_inputs_path(dailyproduction) %>
+        <%= link_to 'مسح', daily_production_inputs_path(dailyproduction),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+
+          <!-- This currently works but smells -->
+        </td>
+      </tr>
+    <% end %>
+    <% end %>
+
+</tbody>
+</table>
