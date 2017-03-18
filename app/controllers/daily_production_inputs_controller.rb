@@ -38,7 +38,7 @@ class DailyProductionInputsController < ApplicationController
 
   private
     def dailyproductions_params
-      params.require(:dailyproductions).permit(:serial,:date,:number_of_row)
+      params.require(:daily_production_input).permit(:serial,:date,:number_of_row)
     end
 end
 

@@ -18,6 +18,7 @@
   <th colspan="1" class="center">النول</th>
   <th colspan="1" class="center">العامل</th>
   <th colspan="1" class="action">Actions</th>
+  <th></th>
 </tr>
 </thead>
 <tbody>
@@ -35,9 +36,8 @@
         <%= link_to 'مسح', job_order_path(job_order),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
-
-          <!-- This currently works but smells -->
         </td>
+        <td></td>
       </tr>
     <% end %>
     <% end %>

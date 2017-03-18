@@ -1,11 +1,7 @@
  <div class="page-header" dir="rtl">
     <h1>استحقاق المدفوعات</h1>
 
-  <div class="contextual">
-    <%= link_to(new_invoice_payment_scheduel_path, class: "btn btn-success") do %>
-      اضافه فاتوره
-    <% end %>
-  </div>
+
 </div>
 
 <table class="table table-striped table-bordered table-condensed" dir="rtl">
@@ -15,6 +11,7 @@
   <th colspan="1" class="center">تستحق بعد</th>
   <th colspan="1" class="center"> من تاريخ</th>
   <th colspan="1" class="action">Actions</th>
+  <th></th>
 </tr>
 </thead>
 <tbody>
@@ -31,9 +28,15 @@
 
           <!-- This currently works but smells -->
         </td>
+        <td></td>
       </tr>
     <% end %>
     <% end %>
 
 </tbody>
 </table>
+  <div class="contextual">
+    <%= link_to(new_invoice_payment_scheduel_path, class: "btn btn-success") do %>
+      اضافه فاتوره
+    <% end %>
+  </div>

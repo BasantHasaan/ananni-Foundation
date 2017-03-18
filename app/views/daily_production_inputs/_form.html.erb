@@ -20,17 +20,17 @@
       </div>
       <div class="form-group">
         <%= f.label "التاريخ:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :date, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.text_field :date, class: "form-control","data-provide"=>"datepicker" %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label "عدد الصفوف:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :number_of_row, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.number_field :number_of_row, class: "form-control",min:0 %>
         </div>
       </div>
   
-      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+      <%= f.submit "حفظ", class: "btn btn-default btn-primary" %>   
  <% end %>

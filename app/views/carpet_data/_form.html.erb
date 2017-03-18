@@ -14,27 +14,27 @@
   <% end %>
 <div class="form-group">
         <%= f.label "العرض:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :width, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.number_field :width, class: "form-control",min:0 %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label "الطول:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :lenght, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.number_field :lenght, class: "form-control" ,min:0%>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label "عدد العقد:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :knot, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.number_field :knot, class: "form-control",min:0 %>
         </div>
       </div>
        <div class="form-group">
         <%= f.label  "كود:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :code, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.number_field :code, class: "form-control" ,min:0%>
         </div>
       </div>
        <div class="form-group">
@@ -57,17 +57,17 @@
       </div>
         <div class="form-group">
         <%= f.label "الكميه:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :raw_material_quantity, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.number_field :raw_material_quantity, class: "form-control",min:0 %>
         </div>
       </div>
         <div class="form-group">
         <%= f.label  "عدد الصفوف:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :number_of_rows, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.number_field :number_of_rows, class: "form-control",min:0 %>
         </div>
         <%= f.collection_select :raw_material_warehouse_ids, RawMaterialWarehouse.all, :id, :item, :include_blank => true %>
       </div>
   
-      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+      <%= f.submit "حفظ", class: "btn btn-default btn-primary" %>   
  <% end %>

@@ -14,59 +14,59 @@
   <% end %>
 <div class="form-group">
         <%= f.label "كود العامل:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
+        <div class="col-md-4">
           <%= f.text_field :code, class: "form-control" %>
         </div>
       </div>
       <div class="form-group">
         <%= f.label "الاسم:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
+        <div class="col-md-6">
           <%= f.text_field :name, class: "form-control" %>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :address, "العنوان:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
+        <div class="col-md-6">
           <%= f.text_field :address, class: "form-control" %>
         </div>
       </div>
        <div class="form-group">
         <%= f.label "التليفون:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">  
+        <div class="col-md-6">  
           <%= f.text_field :phone, class: "form-control" %>
         </div>
       </div>
        <div class="form-group">
         <%= f.label  "الفئه:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
+        <div class="col-md-6">
           <%= f.text_field :category, class: "form-control" %>
         </div>
       </div>
        <div class="form-group">
         <%= f.label "وحده الحساب:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :rate_unit, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.number_field :rate_unit, class: "form-control" %>
         </div>
       </div>
        <div class="form-group">
         <%= f.label  "المبلغ:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :rate_amount, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.number_field :rate_amount, class: "form-control" %>
         </div>
       </div>
        <div class="form-group">
         <%= f.label "تم فصله:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :fired, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.check_box :fired, class: "form-control" %>
         </div>
       </div>
        <div class="form-group">
         <%= f.label  "تاريخ الفصل:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :firing_date, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.text_field :firing_date, "data-provide"=> 'datepicker' %>
         </div>
       </div>
   
-      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+      <%= f.submit "حفظ", class: "btn btn-default btn-primary" %>   
  <% end %>

@@ -14,22 +14,23 @@
   <% end %>
 <div class="form-group" dir="rtl">
         <%= f.label "القيمه:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :amount, class: "form-control" %>
+        <div class="col-md-4">
+        <%= f.number_field :amount, value: number_to_currency(f.object.amount.to_f, delimiter: '', unit: ''), step: :any,min:0,class: "form-control" %>
+
         </div>
 </div>
 <div class="form-group" dir="rtl">
         <%= f.label  "تستحق بعد:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :due_after, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.text_field :due_after ,"data-provide"=> 'datepicker',class: "form-control"%>
         </div>
 </div>
 
 <div class="form-group" dir="rtl">
         <%= f.label "من تاريخ:", class: "col-md-4 control-label" %>
-        <div class="col-md-8">
-          <%= f.text_field :due_from, class: "form-control" %>
+        <div class="col-md-4">
+          <%= f.text_field :due_from,"data-provide"=> 'datepicker',class: "form-control"%>
         </div>
 </div>
-      <%= f.submit "Submit", class: "btn btn-default btn-primary" %>   
+      <%= f.submit "حفظ", class: "btn btn-default btn-primary" %>   
  <% end %>

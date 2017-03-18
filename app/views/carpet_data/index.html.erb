@@ -16,8 +16,9 @@
   <th colspan="1" class="center">اسم الماده الخام</th>
   <th colspan="1" class="center">الكميه</th>
   <th colspan="1" class="center">عدد الصفوف</th>
+  <th colspan="1" class="center">اجراء</th>
+  <th></th>
 
-  <th colspan="1" class="action">Actions</th>
 </tr>
 </thead>
 <tbody>
@@ -37,9 +38,8 @@
         <%= link_to 'مسح السجاده', carpet_datum_path(carpetdata),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
-
-          <!-- This currently works but smells -->
         </td>
+        <td></td>
       </tr>
     <% end %>
     <% end %>
