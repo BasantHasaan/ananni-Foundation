@@ -67,3 +67,4 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 gem 'unicorn', '~> 5.1.0'
+gem 'rails_12factor', group: :production
